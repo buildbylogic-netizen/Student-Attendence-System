@@ -1,0 +1,23 @@
+name: Student Attendance CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f style.css
+          test -f script.js
+
+      - name: Check application title
+        run: |
+          grep -q "<title>Student Attendance System</title>" index.html
