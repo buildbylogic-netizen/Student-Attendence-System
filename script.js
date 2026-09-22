@@ -18,6 +18,7 @@ function addStudent() {
 
     displayStudents();
     updateSummary();
+    saveStudents();
 }
 
 function markAttendance(index, status) {
@@ -25,6 +26,7 @@ function markAttendance(index, status) {
 
     displayStudents();
     updateSummary();
+    saveStudents();
 }
 
 function deleteStudent(index) {
@@ -32,6 +34,8 @@ function deleteStudent(index) {
 
     displayStudents();
     updateSummary();
+    saveStudents();
+
 }
 
 function clearAttendance() {
@@ -39,6 +43,7 @@ function clearAttendance() {
 
     displayStudents();
     updateSummary();
+    saveStudents();
 }
 
 function displayStudents() {
@@ -91,3 +96,17 @@ function updateSummary() {
     document.getElementById("presentStudents").textContent = present;
     document.getElementById("absentStudents").textContent = absent;
 }
+function saveStudents() {
+    localStorage.setItem("students", JSON.stringify(students));
+}
+
+function loadStudents() {
+    const savedStudents = localStorage.getItem("students");
+
+    if (savedStudents) {
+        students = JSON.parse(savedStudents);
+        displayStudents();
+        updateSummary();
+    }
+}
+loadStudents();
