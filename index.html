@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Attendance System</h1>
+        <p class="subtitle">Manage student attendance easily</p>
+
+        <div class="input-section">
+            <input type="text" id="studentName" placeholder="Enter student name">
+
+            <button onclick="addStudent()">Add Student</button>
+        </div>
+
+        <div class="attendance-summary">
+            <div class="summary-box">
+                <h3>Total Students</h3>
+                <p id="totalStudents">0</p>
+            </div>
+
+            <div class="summary-box">
+                <h3>Present</h3>
+                <p id="presentStudents">0</p>
+            </div>
+
+            <div class="summary-box">
+                <h3>Absent</h3>
+                <p id="absentStudents">0</p>
+            </div>
+        </div>
+
+        <div class="table-section">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Student Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="attendanceTable">
+                    <!-- Student records will appear here -->
+                </tbody>
+            </table>
+
+        </div>
+
+        <button class="clear-button" onclick="clearAttendance()">
+            Clear All Records
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
